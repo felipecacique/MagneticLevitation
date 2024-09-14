@@ -1,0 +1,63 @@
+Esquemas de levitadores magneticos
+
+http://www.coilgun.info/lev_elexnow1996/home.htm
+http://www.bis0uhr.de/index.htm?http://www.bis0uhr.de/projekte/schwebekugel/english.php%99http://www.youtube.com/watch?v=BY-HvrxY8Ic
+
+http://www.levitron.com/instructions.html
+
+Efeito Hall
+http://www.newtoncbraga.com.br/index.php/como-funciona/6640-como-funcionam-os-sensores-de-efeito-hall-art1050
+
+loja de imas usa
+http://www.first4magnets.com/index.asp
+
+
+levitador mag para geraçao de energia eolica eficiente
+http://www.passo-a-passo.com/mec/3.2.1/05_teoria.htm
+
+Flywheel
+https://periodicos.ufsc.br/index.php/fisica/article/viewFile/9298/8589
+http://repositorio.ipl.pt/bitstream/10400.21/1192/1/Disserta%C3%A7%C3%A3o.pdf
+http://www.tecmundo.com.br/levitacao-magnetica/23340-zeron-bola-metalica-controlada-por-computador-ignora-a-gravidade-video-.htm
+http://www.sbfisica.org.br/fne/Vol1/Num1/artigo6.pdf
+
+processamento de sinais
+http://def.fe.up.pt/pt/Processamento_de_sinais
+
+
+Synt
+http://www.musicfromouterspace.com/
+http://www.fantasyjackpalance.com/fjp/sound/synth/synthdata/16-moog-minimoog.html
+http://beausievers.com/synth/synthbasics/
+http://musicthing.co.uk/modular/wp-content/uploads/2012/05/Random-Reading-List.pdf
+http://www.moogmusic.com/products/apps/animoog-iphone#sound-tab
+
+
+levitador patente
+http://worldwide.espacenet.com/publicationDetails/biblio?CC=US&NR=2007170798A1&KC=A1&FT=D&ND=&date=20070726&DB=&locale=en_EP
+
+Constgruindo eletroima 
+http://www.planetseed.com/files/uploadedfiles/f02_pt.pdf
+
+artigo
+http://www.das.ufsc.br/~moreno/levitacao/714.pdf
+http://www.coe.ufrj.br/~richard/EEE200/LEVITATION%20OF%20A%20DISC/Artigo%20disco.pdf
+http://www.pp.ufu.br/Cobenge2001/trabalhos/MTE070.pdf
+
+
+arduino+processing
+http://www.seucurso.com.br/index.php?option=com_content&view=article&id=267:interacao-arduino-potenciometro-processing&catid=901:arduino&Itemid=65
+http://www.paulotrentin.com.br/wp-content/uploads/2012/11/Arduino-e-Processing.pdf
+https://skydrive.live.com/view.aspx?resid=59BCF284A2D396AA!195&cid=59bcf284a2d396aa&app=WordPdf&authkey=!
+http://playground.arduino.cc/Portugues/LearningGraph
+
+http://www.youtube.com/watch?v=g0pSfyXOXj8
+
+
+http://eletromagnetismoifes.blogspot.com.br/2009/03/levitador-magnetico.html
+
+
+
+calculo do filtro
+
+http://www.ehow.com.br/projetar-circuito-estabilizar-sinal-pwm-como_38297/

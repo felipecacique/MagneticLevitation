@@ -1,0 +1,17 @@
+Instruções para compilar o programa no simulink
+1- primeiro é necessário ter o matlab/simulink instalados
+2- instalar o pacote(extensao) do arduino no simulink, para isso:
+   2.1- abrir matlab
+   2.2- ir em add on, na parte superior da tela
+   2.3- abrir get hardware support package
+   2.4- na tela a seguir escolha a opção internet
+   2.5- escolha o suporte arduino 
+   2.6- será necessario fazer o cadastro no mathworks para poder baixar o pacote
+   2.7- Instalar o package arduino
+3- Abrir o arquivo levitacaoSimulinkpackage no simulink
+4- selecione tool->run on target hardware->prepare to run
+5- selecione o arduino uno e aperte ok
+6- Para gravar o codigo no arduino selecione tool->run on target hardware->run
+O código estará embutido no arduino
+
+

@@ -1,0 +1,204 @@
+//Codigo do Processing para receber dados do Arduino e e mostrá-los na forma de gráficos 
+
+import processing.serial.*;
+Serial port;
+float brightness = 0;
+float val2 = 0;
+float bright= 0;
+int e=0;
+
+int sizeWidth =1200, sizeHeight =720;
+
+int  periodo = 5;
+float amplitude = (float(sizeHeight)/1023);
+int dimVectory = sizeWidth/periodo;
+
+int[] coords = new int[dimVectory ];
+int[] coords2 = new int[dimVectory ];
+
+
+PFont f;
+
+int variable=0;
+int variableChosen=0;
+
+float val3= 0, val4= 0, val5= 0, val6= 0, val7= 0, campoRef= 0;
+int[] coords3 = new int[dimVectory ];
+int[] coords4 = new int[dimVectory ];
+void setup()
+{
+  size (sizeWidth, sizeHeight);
+  port = new Serial(this, "COM5", 115200);
+  port.bufferUntil('\n'); 
+  
+  f = createFont("Arial",20,true); 
+}
+
+void draw()
+{
+
+  background(255); 
+  smooth();
+
+  
+  noFill();
+  stroke(0,0,255);
+  drawingCurves( coords,  dimVectory,  sizeHeight, periodo);
+  vectorUpdate( coords, dimVectory, amplitude, brightness);
+  
+//pwm saida  
+  noFill();
+  stroke(255,0,0);
+  drawingCurves( coords2,  dimVectory,  sizeHeight, periodo);
+  vectorUpdate( coords2, dimVectory, amplitude, val2*2);
+  
+  //campoRef
+  noFill();
+  stroke(100,255,100);
+  drawingCurves( coords3,  dimVectory,  sizeHeight, periodo);
+  vectorUpdate( coords3, dimVectory, amplitude, campoRef);
+  
+  writeText ( );
+
+    
+
+port.write(variableChosen);
+}
+
+void serialEvent (Serial port)
+{
+bright = float(port.readStringUntil('\n'));
+
+if(e==0){
+brightness=bright;
+e=1;
+}
+else if(e==1){
+val2=bright;
+e=2;}
+else if(e==2){
+val3=bright;
+e=3;}
+else if(e==3){
+val4=bright;
+e=4;}
+else if(e==4){
+val5=bright;
+e=5;}
+else if(e==5){
+val6=bright;
+campoRef=bright;
+e=0;}
+
+}
+
+void vectorUpdate (int[] coords, int dimVectory, float amplitude, float brightness)
+{
+   for(int i = 0; i < (dimVectory-1); i++)
+  {
+  coords[i] = coords[i+1]; 
+  }
+  coords[dimVectory-1] = int((brightness)* amplitude);
+}
+
+void drawingCurves (int[] coords, int dimVectory, int sizeHeight, int periodo )
+{
+
+  beginShape();
+    curveVertex(0, coords[0]); // the first control point
+  for(int i = 0; i < dimVectory; i++)
+  {
+  curveVertex(periodo*i, sizeHeight-(coords[i])); // is also the start point of curve
+  }
+  curveVertex(periodo*dimVectory-1, sizeHeight- (coords[dimVectory-1])); // is also the last control point
+  endShape();
+}
+
+
+void writeText ( )
+{
+    textFont(f);       
+  fill(0);
+
+  textAlign(CENTER);
+  text("Curva sinal X tempo.",int(width/2),int(sizeHeight/20));
+   
+   fill(0, 255, 0); 
+  textAlign(LEFT);
+  text("-Periodo= ",int(width/30), 60);
+   fill(0, 255, 0); 
+  textAlign(LEFT);
+  text(periodo,int(width/30)+90, 60);
+
+
+      
+  fill(0, 0, 255);
+  textAlign(LEFT);
+  text("B de entrada - ",int(width/30), 90);   
+  
+   
+  textAlign(LEFT);
+  text(brightness,int(width/30)+120, 90);   
+  
+  fill(255, 0, 0);
+  textAlign(LEFT);
+  text("Saída PWM",int(width/30), 120);   
+  
+  textAlign(LEFT);
+  text(val2,int(width/30)+120, 120);  
+  
+//campoRef  
+    fill(0, 255, 100);
+  textAlign(LEFT);
+  text("B referência ",int(width/30), 150);   
+  
+  textAlign(LEFT);
+  text(val6,int(width/30)+120, 150);  
+  
+  
+  // print nos ganhos
+    fill(255, 0, 0);
+  textAlign(LEFT);
+  text("Kp",int(width-width/5), 90);   
+  
+  textAlign(LEFT);
+  text(val3,int(width-width/5)+30, 90);  
+  
+  
+    fill(0, 255, 0);
+  textAlign(LEFT);
+  text("Kd",int(width-width/5), 120);   
+  
+  textAlign(LEFT);
+  text(val4,int(width-width/5)+30, 120);  
+  
+  
+    fill(0, 0, 255);
+  textAlign(LEFT);
+  text("Ki",int(width-width/5), 150);   
+  
+  textAlign(LEFT);
+  text(val5,int(width-width/5)+30, 150);  
+  
+}
+
+// = " '
+void keyPressed() {
+  if(key >='0'&&key <='9')
+  {
+   variable *= 10;
+   variable += key-48;
+  }
+  if(key == BACKSPACE || key == DELETE)
+  {
+    variable /= 10;
+  }
+  if(key == ENTER||key == RETURN)
+  {
+    variableChosen= variable;
+ //   periodo= variable;
+   variable = 0; 
+  }
+   println (variable);
+}
+
