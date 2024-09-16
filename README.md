@@ -171,6 +171,7 @@ void loop() {
     // Update last input for next iteration
     lastInput = input;
 }
+```
 This code continuously monitors the magnet’s position, calculates the PID values, and adjusts the solenoid’s current via PWM.
 
 ## 8. System Calibration
