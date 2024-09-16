@@ -116,7 +116,7 @@ The output voltage of the Hall-effect sensor can be converted into a correspondi
 
 <div style="text-align: center">
   <figure>
-    <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/25.jpg" alt="Magnet levitating" style="width: 20%">
+    <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/25.jpg" alt="Magnet levitating" style="width: 50% text-align: center">
     <!-- <figcaption>Calibration curve</figcaption> -->
   </figure>
 </div>
