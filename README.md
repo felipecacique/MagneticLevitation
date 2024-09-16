@@ -114,12 +114,10 @@ This eliminates the solenoid’s field from the measurement, leaving only the ma
 
 The output voltage of the Hall-effect sensor can be converted into a corresponding distance using a mathematical model derived from the calibration data.
 
-<div style="text-align: center">
-  <figure>
-    <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/25.jpg" alt="Magnet levitating" style="width: 50% text-align: center">
-    <!-- <figcaption>Calibration curve</figcaption> -->
-  </figure>
-</div>
+<figure style="text-align: center">
+  <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/25.jpg" alt="Magnet levitating" style="width: 50%">
+  <!-- <figcaption>Calibration curve</figcaption> -->
+</figure>
 
 The non-linear relationship between voltage and distance is approximated by the following exponential equation:
 
