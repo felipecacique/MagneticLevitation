@@ -138,7 +138,6 @@ Where:
 ### 7.2 Code Implementation
 
 The Arduino code implemented the PID control by reading the sensors, computing the error, and adjusting the PWM signal accordingly. Here’s a simplified version of the key code:
-
 ```cpp
 double Kp = 2.0, Ki = 0.5, Kd = 1.0;
 double setPoint = 0.0; // Desired magnet position
