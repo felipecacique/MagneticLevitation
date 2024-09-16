@@ -184,4 +184,8 @@ The calibration also involved characterizing the system’s dynamic response, en
 
 The magnetic levitation system successfully demonstrated stable levitation using electromagnetic control. The integration of Hall-effect sensors, feedback control, and a well-tuned PID algorithm allowed for precise vertical position regulation. Despite the system’s non-linear nature, the use of two sensors and a differential measurement strategy provided accurate feedback. The project’s outcome met the initial goals of levitating a magnet with a small, controllable range of motion.
 
+<figure>
+  <img src="[sunset.jpg](https://raw.githubusercontent.com/felipecacique/MagneticLevitator/main/Magnetic%20Levitator%20I/Results/20131105_181025.jpg)" alt="A beautiful sunset">
+  <figcaption>Sunset over the mountains</figcaption>
+</figure>
 
