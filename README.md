@@ -38,18 +38,18 @@ The foundation of this project relies on electromagnetic theory, particularly th
 
 The solenoid generates a magnetic field when current flows through its windings. The magnetic field (B) inside a solenoid is given by:
 
-\[ B = \mu_0 \cdot \frac{N \cdot I}{L} \]
+$$ B = \mu_0 \cdot \frac{N \cdot I}{L} $$
 
 Where:
 - **B** is the magnetic flux density (measured in Tesla),
-- **\mu_0** is the permeability of free space (\(4\pi \times 10^{-7} \, T \cdot m/A\)),
+- **\(\mu_0\)** is the permeability of free space (\(4\pi \times 10^{-7} \, \text{T} \cdot \text{m/A}\)),
 - **N** is the number of turns of the coil,
 - **I** is the current through the coil (in amperes),
 - **L** is the length of the solenoid.
 
 The force exerted on the magnet is directly related to this magnetic field and opposes gravity. This balancing act ensures levitation:
 
-\[ F_m = B \cdot \mu_m \]
+$$ F_m = B \cdot \mu_m $$
 
 Where **\(\mu_m\)** is the magnetic moment of the object.
 
@@ -57,9 +57,13 @@ Where **\(\mu_m\)** is the magnetic moment of the object.
 
 The system must balance the upward magnetic force (\(F_m\)) with the downward gravitational force (\(F_g\)):
 
-\[ F_m = F_g = m \cdot g \]
+$$ F_m = F_g = m \cdot g $$
 
-Where **m** is the mass of the levitating object and **g** is the gravitational acceleration. However, maintaining stable levitation requires continuously adjusting **B** based on the magnet’s position, which is done through feedback control.
+Where:
+- **m** is the mass of the levitating object,
+- **g** is the gravitational acceleration.
+
+However, maintaining stable levitation requires continuously adjusting **B** based on the magnet’s position, which is done through feedback control.
 
 ## 5. Sensor Calibration and Placement
 
@@ -69,33 +73,34 @@ The levitation system used two Hall-effect sensors, one placed above the solenoi
 
 These sensors detect the magnetic field by converting it into a proportional voltage. A Hall-effect sensor’s output voltage (\(V_H\)) is described by:
 
-\[ V_H = K_H \cdot B + V_0 \]
+$$ V_H = K_H \cdot B + V_0 $$
 
 Where:
-- **K_H** is the sensitivity of the sensor (in volts per Tesla),
+- **\(K_H\)** is the sensitivity of the sensor (in volts per Tesla),
 - **B** is the magnetic flux density at the sensor’s position,
-- **V_0** is the output when no field is present (typically 2.5V for 5V-supplied sensors).
+- **\(V_0\)** is the output when no field is present (typically 2.5V for 5V-supplied sensors).
 
-By placing one sensor above and one below the levitating magnet, the system can detect the difference between the field created by the solenoid and the field created by the magnet. This configuration allows the system to isolate the magnet’s contribution, critical for accurate position sensing.
+By placing one sensor above and one below the levitating magnet, the system can detect the difference between the field created by the solenoid and the field created by the magnet. This configuration allows the system to isolate the magnet’s contribution, which is critical for accurate position sensing.
 
 The output from each sensor:
-\[ S_1 = B_{magnet} + B_{solenoid} \]
-\[ S_2 = B_{solenoid} \]
+- \(S_1 = B_{\text{magnet}} + B_{\text{solenoid}}\)
+- \(S_2 = B_{\text{solenoid}}\)
 
 Taking the difference:
-\[ S_1 - S_2 = B_{magnet} \]
+
+$$ S_1 - S_2 = B_{\text{magnet}} $$
 
 This eliminates the solenoid’s field from the measurement, leaving only the magnet’s field for position feedback.
 
 ### 5.2 Sensor Output to Distance Conversion
 
-The output voltage of the Hall-effect sensor can be converted into a corresponding distance using a mathematical model derived from the calibration data. The non-linear relationship between voltage and distance was approximated by the following exponential equation:
+The output voltage of the Hall-effect sensor can be converted into a corresponding distance using a mathematical model derived from the calibration data. The non-linear relationship between voltage and distance is approximated by the following exponential equation:
 
-\[ Z = a + b \cdot e^{-V_H} + c + d \cdot e^{-V_H} + e \]
+$$ Z = a + b \cdot e^{-V_H} + \frac{c}{d \cdot e^{-V_H} + e} $$
 
 Where:
 - **Z** is the distance from the magnet to the sensor (in cm),
-- **V_H** is the voltage output from the Hall-effect sensor (in Volts),
+- **\(V_H\)** is the voltage output from the Hall-effect sensor (in Volts),
 - **a, b, c, d, e** are constants determined through the calibration process.
 
 ## 6. Circuit Design
@@ -108,13 +113,13 @@ The Arduino alone cannot supply enough current to the solenoid to produce the ne
 
 The transistor’s base current controls the output current through the solenoid, where:
 
-\[ I_c = \beta \cdot I_b \]
+$$ I_C = \beta \cdot I_B $$
 
 With a high current gain (\(\beta \approx 1000\)), the transistor ensures that small adjustments from the Arduino result in significant changes in the solenoid’s current.
 
 ### 6.2 Difference Between Sensors and Amplifier
 
-The difference between the two Hall-effect sensor outputs was calculated using an electronic circuit. Specifically, an operational amplifier (op-amp) in a differential configuration was employed to subtract the output of the bottom sensor (S2) from the top sensor (S1). This method electronically isolates the magnetic field (\(B_{solenoid}\)) generated by the magnet from the field of the solenoid.
+The difference between the two Hall-effect sensor outputs was calculated using an electronic circuit. Specifically, an operational amplifier (op-amp) in a differential configuration was employed to subtract the output of the bottom sensor (\(S_2\)) from the top sensor (\(S_1\)). This method electronically isolates the magnetic field (\(B_{\text{solenoid}}\)) generated by the magnet from the field of the solenoid.
 
 The output voltage was fed into an operational amplifier circuit. This amplified the small voltage differences between the sensors, making the system more sensitive to minor positional changes. The amplified output was then fed to the Arduino’s analog input for processing.
 
@@ -126,14 +131,14 @@ The core of the system’s stability lies in the PID controller, which dynamical
 
 The PID controller adjusts the output by summing three terms:
 
-\[ u(t) = K_p \cdot e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t) \]
+$$ u(t) = K_p \cdot e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t) $$
 
 Where:
 - **u(t)** is the control signal (PWM value),
 - **e(t)** is the error (difference between desired and actual position),
-- **K_p** is the proportional gain,
-- **K_i** is the integral gain,
-- **K_d** is the derivative gain.
+- **\(K_p\)** is the proportional gain,
+- **\(K_i\)** is the integral gain,
+- **\(K_d\)** is the derivative gain.
 
 ### 7.2 Code Implementation
 
