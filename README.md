@@ -25,3 +25,25 @@ The system dynamically balances the forces acting on the object, which requires 
 
 ## Physics and Electromagnetism
 The foundation of this project relies on **electromagnetic theory**, particularly the interaction between a solenoid’s magnetic field and a ferromagnetic object (the magnet).
+
+### Magnetic Field of a Solenoid
+The solenoid generates a magnetic field when current flows through its windings. The magnetic field (\( B \)) inside a solenoid is given by:
+\[ B = \mu_0 \cdot \frac{N \cdot I}{L} \]
+Where:
+- \( B \) is the magnetic flux density (measured in Tesla),
+- \( \mu_0 \) is the permeability of free space (\( 4\pi \times 10^{-7} \, \text{T} \cdot \text{m}/\text{A} \)),
+- \( N \) is the number of turns of the coil,
+- \( I \) is the current through the coil (in amperes),
+- \( L \) is the length of the solenoid.
+
+The **force** exerted on the magnet is directly related to this magnetic field and opposes gravity. This balancing act ensures levitation:
+\[ F_m = B \cdot \mu_m \]
+Where \( \mu_m \) is the magnetic moment of the object.
+
+### Levitation Equilibrium
+The system must balance the upward magnetic force (\( F_m \)) with the downward gravitational force (\( F_g \)):
+\[ F_m = F_g = m \cdot g \]
+Where \( m \) is the mass of the levitating object and \( g \) is the gravitational acceleration. However, maintaining stable levitation requires continuously adjusting \( B \) based on the magnet’s position, which is done through feedback control.
+
+## Sensor Calibration and Placement
+The levitation system used two Hall-effect sensors, one placed above the solenoid and the other below, to measure the magnetic field changes as the magnet moved.
