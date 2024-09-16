@@ -6,6 +6,12 @@
 
 Magnetic levitation technology enables objects to float by balancing magnetic forces and gravitational pull. This project focuses on constructing a magnetic levitation system using an Arduino, emphasizing control through sensors and precise electromagnetic fields. The system successfully levitated a magnet vertically using a solenoid coil, Hall-effect sensors, and a PID (Proportional-Integral-Derivative) controller.
 
+
+
+https://github.com/user-attachments/assets/46565931-ad86-4514-b6ed-ae039135d77a
+
+
+
 [![IMAGE ALT TEXT HERE](https://i.ytimg.com/vi/QzIlvICzX9E/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLByEVHDQamiJP2yj_FIBcjzX9TBcQ)](https://youtu.be/QzIlvICzX9E)
 
 ## 2. System Overview
