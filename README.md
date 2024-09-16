@@ -42,7 +42,7 @@ The solenoid generates a magnetic field when current flows through its windings.
 
 Where:
 - **B** is the magnetic flux density (measured in Tesla),
-- **\(\mu_0\)** is the permeability of free space (\(4\pi \times 10^{-7} \, T \cdot m/A\)),
+- **\mu_0** is the permeability of free space (\(4\pi \times 10^{-7} \, T \cdot m/A\)),
 - **N** is the number of turns of the coil,
 - **I** is the current through the coil (in amperes),
 - **L** is the length of the solenoid.
@@ -166,8 +166,7 @@ void loop() {
     
     // Update last input for next iteration
     lastInput = input;
-}```
-
+}
 This code continuously monitors the magnet’s position, calculates the PID values, and adjusts the solenoid’s current via PWM.
 
 ## 8. System Calibration
