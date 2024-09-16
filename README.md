@@ -115,7 +115,7 @@ This eliminates the solenoid’s field from the measurement, leaving only the ma
 The output voltage of the Hall-effect sensor can be converted into a corresponding distance using a mathematical model derived from the calibration data.
 
 <figure>
-  <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/25.png" alt="Magnet levitating">
+  <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/25.jpg" alt="Magnet levitating">
   <figcaption>Calibration curve</figcaption>
 </figure>
 
@@ -134,7 +134,7 @@ Where:
 The electrical system consisted of several key components to drive the solenoid and process sensor signals.
 
 <figure>
-  <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/22.png" alt="Magnet levitating">
+  <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/22.jpg" alt="Magnet levitating">
   <figcaption>Circuit board</figcaption>
 </figure>
 
