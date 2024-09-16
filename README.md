@@ -58,7 +58,7 @@ Where:
 - **L** is the length of the solenoid.
 
 <figure>
-  <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/1.png" alt="Magnet levitating">
+  <img src="https://github.com/felipecacique/MagneticLevitator/blob/main/Others/1.jpg" alt="Magnet levitating">
   <figcaption>Magnetic force against gravity</figcaption>
 </figure>
 
