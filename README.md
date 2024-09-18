@@ -175,7 +175,9 @@ The core of the system’s stability lies in the PID controller, which dynamical
 
 The PID controller adjusts the output by summing three terms:
 
-$$ u(t) = K*p \cdot e(t) + K_i \int*{0}^{t} e(\tau) d\tau + K_d \frac{d}{dt} e(t) $$
+$$
+u(t) = K_p \cdot e(t) + K_i \int_0^t e(\tau) \, d\tau + K_d \frac{d}{dt} e(t)
+$$
 
 Where:
 
@@ -223,7 +225,7 @@ This code continuously monitors the magnet’s position, calculates the PID valu
 
 ## 8. System Calibration
 
-To optimize the system’s performance, the sensors were calibrated, and the PID constants were fine-tuned experimentally. Calibration involved measuring the sensor outputs at known positions and adjusting the gains (\(K_p, K_i, K_d\)) for stable levitation.
+To optimize the system’s performance, the sensors were calibrated, and the PID constants were fine-tuned experimentally. Calibration involved measuring the sensor outputs at known positions and adjusting the gains **K<sub>p</sub>** (proportional), **K<sub>i</sub>** (integral), and **K<sub>d</sub>** (derivative) for stable levitation.
 
 The calibration also involved characterizing the system’s dynamic response, ensuring the magnet would not oscillate excessively. The proportional gain was adjusted to react quickly, while the derivative gain was tuned to minimize overshooting.
 
