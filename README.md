@@ -93,7 +93,7 @@ $$ V_H = K_H \cdot B + V_0 $$
 
 Where:
 
-- **K<sub>H</sub>**  is the sensitivity of the sensor (in volts per Tesla),
+- **K<sub>H</sub>** is the sensitivity of the sensor (in volts per Tesla),
 - **B** is the magnetic flux density at the sensor’s position,
 - **V<sub>0</sub>** is the output when no field is present (typically 2.5V for 5V-supplied sensors).
 
@@ -106,9 +106,7 @@ The output from each sensor:
 
 Taking the difference:
 
-
 - **S<sub>1</sub>** - **S<sub>2</sub>** = B<sub>magnet</sub>
-
 
 This eliminates the solenoid’s field from the measurement, leaving only the magnet’s field for position feedback.
 
@@ -185,7 +183,7 @@ Where:
 - **e(t)** is the error (difference between desired and actual position),
 - **K<sub>p</sub>** is the proportional gain,
 - **K<sub>i</sub>** is the integral gain,
-- **K<sub>d</sub>**  is the derivative gain.
+- **K<sub>d</sub>** is the derivative gain.
 
 ### 7.2 Code Implementation
 
@@ -234,6 +232,6 @@ The calibration also involved characterizing the system’s dynamic response, en
 The magnetic levitation system successfully demonstrated stable levitation using electromagnetic control. The integration of Hall-effect sensors, feedback control, and a well-tuned PID algorithm allowed for precise vertical position regulation. Despite the system’s non-linear nature, the use of two sensors and a differential measurement strategy provided accurate feedback. The project’s outcome met the initial goals of levitating a magnet with a small, controllable range of motion.
 
 <figure>
-  <img src="https://raw.githubusercontent.com/felipecacique/MagneticLevitator/main/Magnetic%20Levitator%20I/Results/20131105_181025.jpg" alt="Magnet levitating">
+  <img src="https://raw.githubusercontent.com/felipecacique/MagneticLevitator/main/Magnetic%20Levitator%20I/Results/20131105_181025.jpg" alt="Magnet levitating" style="width: 50%">
   <figcaption>Magnet levitating</figcaption>
 </figure>
